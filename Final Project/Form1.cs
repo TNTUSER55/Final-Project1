@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
+    
     public partial class Form1 : Form
     {
         int counter = 0;
@@ -24,7 +25,25 @@ namespace Final_Project
             }
             
         }
+        private string[] removeItemFromArray(int RemoveAt, string[] IndicesArray)
+        {
+            string[] newIndicesArray = new string[IndicesArray.Length - 1];
 
+            int i = 0;
+            int j = 0;
+            while (i < IndicesArray.Length)
+            {
+                if (i != RemoveAt)
+                {
+                    newIndicesArray[j] = IndicesArray[i];
+                    j++;
+                }
+
+                i++;
+            }
+
+            return newIndicesArray;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -76,8 +95,12 @@ namespace Final_Project
            
         }
 
-        
-        
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(listBox1.SelectedIndex.ToString());
+            removeItemFromArray(listBox1.SelectedIndex, name);
+            removeItemFromArray(listBox1.SelectedIndex, job);
+            listBox1.Items.Remove(listBox1.SelectedItem);
+        }
     }
 }

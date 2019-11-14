@@ -13,9 +13,15 @@ namespace Final_Project
     public partial class Form1 : Form
     {
         int counter = 0;
+        string[] name = new string[5000];
+        string[] job = new string[5000];
         public Form1()
         {
             InitializeComponent();
+            if(counter >= 5000)
+            {
+                MessageBox.Show("From this point on this application will not run due to way too many people in the fields. Please delete some to contune use.");
+            }
             
         }
 
@@ -36,28 +42,42 @@ namespace Final_Project
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            string[] name = {};
-            string[] job = {};
+            
             name[counter] = textBox1.Text;
             if (radioButton1.Checked)
             {
-                job[counter] = "Lawyer";
+                job[counter] = radioButton1.Text;
             }
-            else if (radioButton2.Checked)
+            if (radioButton2.Checked)
             {
-                job[counter] = "Personal Assistant";
+                job[counter] = radioButton2.Text;
             }
-            else if (radioButton3.Checked)
+            if (radioButton3.Checked)
             {
-                job[counter] = "Agent";
+                job[counter] = radioButton3.Text;
             }
-            else if (   radioButton4.Checked)
+            if(radioButton4.Checked)
             {
-                job[counter] = "Trainer";
+                job[counter] = radioButton4.Text;
             }
+            try
+            {
+                listBox1.Items.Add(name[counter] + ": " + job[counter]);
+                textBox1.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a job");
+            }
+            ++counter;
 
-            listBox1.Items.Add(name[counter] + ": " + job[counter]);
-
+            
+            
+           
         }
+
+        
+        
+
     }
 }

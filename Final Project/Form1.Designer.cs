@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -51,7 +52,6 @@
             this.SaleryBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,21 +91,23 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(328, 98);
+            this.Add.Location = new System.Drawing.Point(328, 127);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(75, 23);
             this.Add.TabIndex = 5;
             this.Add.Text = "--->";
             this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Sub
             // 
-            this.Sub.Location = new System.Drawing.Point(328, 127);
+            this.Sub.Location = new System.Drawing.Point(430, 289);
             this.Sub.Name = "Sub";
             this.Sub.Size = new System.Drawing.Size(75, 23);
             this.Sub.TabIndex = 6;
-            this.Sub.Text = "<----";
+            this.Sub.Text = "Delete Item";
             this.Sub.UseVisualStyleBackColor = true;
+            this.Sub.Click += new System.EventHandler(this.Sub_Click);
             // 
             // listBox2
             // 
@@ -153,6 +155,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(598, 83);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 12;
             // 
@@ -198,10 +201,20 @@
             this.groupBox1.Controls.Add(this.Sub);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(843, 299);
+            this.groupBox1.Size = new System.Drawing.Size(843, 355);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(223, 289);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Delete Item";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // radioButton4
             // 
@@ -278,21 +291,11 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.SaleryBox);
-            this.groupBox2.Location = new System.Drawing.Point(322, 133);
+            this.groupBox2.Location = new System.Drawing.Point(294, 81);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(328, 157);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Delete Item";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 

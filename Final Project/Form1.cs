@@ -14,8 +14,10 @@ namespace Final_Project
     public partial class Form1 : Form
     {
         int counter = 0;
+        int x = 0;
         string[] name = new string[5000];
         string[] job = new string[5000];
+        string[] Hired = new string[5000];
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +53,7 @@ namespace Final_Project
                 double salery = double.Parse(SaleryBox.Text);
                 groupBox2.Visible = false;
                 groupBox1.Visible = true;
+                textBox2.Text = salery.ToString("c");
             }
             catch
             {
@@ -97,10 +100,45 @@ namespace Final_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(listBox1.SelectedIndex.ToString());
-            removeItemFromArray(listBox1.SelectedIndex, name);
-            removeItemFromArray(listBox1.SelectedIndex, job);
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            try
+            {
+                //MessageBox.Show(listBox1.SelectedIndex.ToString());
+                removeItemFromArray(listBox1.SelectedIndex, name);
+                removeItemFromArray(listBox1.SelectedIndex, job);
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+            catch
+            {
+                return;
+            }
+            
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox2.Items.Add(listBox1.SelectedItem);
+                Hired[x] = name[listBox1.SelectedIndex] + "." + job[listBox1.SelectedIndex];
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void Sub_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                removeItemFromArray(listBox2.SelectedIndex, Hired);
+                listBox2.Items.Remove(listBox2.SelectedItem);
+            }
+            catch
+            {
+                return;
+            }
+            
         }
     }
 }

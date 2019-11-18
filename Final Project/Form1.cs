@@ -18,6 +18,8 @@ namespace Final_Project
         string[] name = new string[5000];
         string[] job = new string[5000];
         string[] Hired = new string[5000];
+        double total = 0;
+        double salery = 0;
         public Form1()
         {
             InitializeComponent();
@@ -50,7 +52,7 @@ namespace Final_Project
         {
             try
             {
-                double salery = double.Parse(SaleryBox.Text);
+                salery = double.Parse(SaleryBox.Text);
                 groupBox2.Visible = false;
                 groupBox1.Visible = true;
                 textBox2.Text = salery.ToString("c");
@@ -120,9 +122,35 @@ namespace Final_Project
             {
                 listBox2.Items.Add(listBox1.SelectedItem);
                 Hired[x] = name[listBox1.SelectedIndex] + "." + job[listBox1.SelectedIndex];
+                foreach(string i in Hired)
+                {
+                    string[] words = i.Split('.');
+                    string compare = words[2];
+                    switch (compare)
+                    {
+                        case "Lawyer":
+                            total += .10;
+                            break;
+                        case "Personal Assistant":
+                            total += .03;
+                            break;
+                        case "Agent":
+                            total += .07;
+                            break;
+                        case "Trainer":
+                            total += .05;
+                            break;
+                        default:
+                            MessageBox.Show("Error");
+                            break;
+
+                    }
+                    textBox3.Text = (salery * total).ToString("c");
+                }
             }
-            catch
+            catch (InvalidCastException error)
             {
+                MessageBox.Show("Failed Here, ADD CLICK " + error.ToString());
                 return;
             }
         }

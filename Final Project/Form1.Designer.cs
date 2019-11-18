@@ -199,7 +199,7 @@
             this.groupBox1.Controls.Add(this.Add);
             this.groupBox1.Controls.Add(this.listBox2);
             this.groupBox1.Controls.Add(this.Sub);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(37, 214);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(843, 355);
             this.groupBox1.TabIndex = 15;

@@ -16,6 +16,7 @@ namespace Final_Project
         int counter = 0;
         string[] name = new string[5000];
         string[] job = new string[5000];
+        string[] hired = new string[5000];
         public Form1()
         {
             InitializeComponent();
@@ -101,6 +102,13 @@ namespace Final_Project
             removeItemFromArray(listBox1.SelectedIndex, name);
             removeItemFromArray(listBox1.SelectedIndex, job);
             listBox1.Items.Remove(listBox1.SelectedItem);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(listBox1.SelectedIndex.ToString());
+            removeItemFromArray(listBox2.SelectedIndex, hired);
+            listBox2.Items.Remove(listBox2.SelectedItem);
         }
     }
 }

@@ -114,9 +114,9 @@ namespace Final_Project
 
         private void Add_Click(object sender, EventArgs e)
         {
-            hired[x] = Name[listBox1.SelectedIndex] + "." + job[listBox1.SelectedIndex];
-            MessageBox.Show(hired[x]);
             listBox2.Items.Add(listBox1.SelectedItem);
+            hired[x] = name[listBox1.SelectedIndex] + "." + job[listBox1.SelectedIndex];
+            MessageBox.Show(hired[x]);
         }
     }
 }

@@ -188,7 +188,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.Add);
             this.groupBox1.Controls.Add(this.listBox2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 152);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(843, 329);
             this.groupBox1.TabIndex = 15;
